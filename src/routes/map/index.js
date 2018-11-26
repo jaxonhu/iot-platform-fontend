@@ -35,7 +35,7 @@ export default {
   },
 
   '/': {
-    title: '首页',
+    title: '智能家居平台',
     icon: 'fa fa-home',
     showInNavbar: { exact: true },
     showInSidebar: true,

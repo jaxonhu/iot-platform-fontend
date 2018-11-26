@@ -1,10 +1,10 @@
 <template>
   <div class="terminal">
-    <i class="fa fa-hashtag"></i>
-    欢迎使用 Vue Demo
-    <i class="fa fa-child"></i>
+    <i class="fa fa-cog"></i>
+    智能设备demo
+    <i class="fa fa-wrench"></i>
     <br>
-    <i class="fa fa-terminal"></i>
+    <!-- <i class="fa fa-terminal"></i>
     <code>npm start</code>
     <i class="fa fa-cog"></i>
     <i class="fa fa-wrench"></i>
@@ -24,7 +24,7 @@
     <i class="fa fa-hand-o-left"></i>
     <i class="fa fa-smile-o"></i>
     <i class="fa fa-hand-peace-o"></i>
-    <i class="fa fa-flag-checkered"></i>
+    <i class="fa fa-flag-checkered"></i> -->
   </div>
 </template>
 <style>
