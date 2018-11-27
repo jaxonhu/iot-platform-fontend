@@ -27,6 +27,49 @@
     <i class="fa fa-flag-checkered"></i> -->
   </div>
 </template>
+<script>
+
+// import Stomp from '../../static/plugins/stomp.min.js'
+// import SockJs from '../../static/plugins/sockjs.min.js'
+
+// import Stomp from 'stompjs'
+import SockJs from 'sockjs-client'
+
+var Stomp = require('stompjs')
+
+export default {
+  data: () => ({
+    // websock: null,
+    // stompClient: null
+  }),
+  created() {
+    this.initWebSocket()
+  },
+  destoryed: function() {
+    // this.websocketclose()
+  },
+  methods: {
+    initWebSocket() {
+      var websock = new SockJs('http://127.0.0.1:8081/websocket')
+      var stompClient = Stomp.over(websock)
+      stompClient.connect({}, function(frame) {
+        console.log('连接成功' + frame)
+        stompClient.subscribe('/app/1/queue/getResponse', response => {
+          console.log(response.body)
+        })
+      })      
+    },
+    websocketclose() {
+      if (this.stompClient !== null) {
+        this.stompClient.disconnect()
+      }
+      console.log('连接关闭')
+    }
+  }
+}
+</script>
+
+
 <style>
 .terminal {
   padding: 30px;
